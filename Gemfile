@@ -24,6 +24,9 @@ gem "puma", "~> 5.0"
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
 
+# used to easily generate fake data: names, addresses, phone numbers
+gem 'faker', '~> 1.6', '>= 1.6.6'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
