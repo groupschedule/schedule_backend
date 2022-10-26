@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   resources :announcements
-  resources :comments
+  resources :comments only [:index, :create]
   resources :sessions
   resources :cohorts
   resources :students, only [:index, :create]
-  resources :technical_mentors
+  resources :technical_mentors, only [:index, :create]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
