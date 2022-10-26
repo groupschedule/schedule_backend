@@ -23,14 +23,14 @@ RSpec.describe "Cohorts", type: :request do
   # update a new cohort
   describe "PATCH /patch" do
     it "returns http success" do
-      patch "/cohorts/id"
+      get "/cohorts/id"
       expect(response).to have_http_status(:success)
     end
   end
   # delete a new cohort
   describe "DELETE /destroy" do
     it "returns http success" do
-      delete "/cohorts/id"
+      get "/cohorts/id"
       expect(response).to have_http_status(:success)
     end
   end

@@ -8,23 +8,19 @@
 puts "seeding"
 c1=Cohort.create(
     name: "SE-13",
-    start_date: 2023-05-23,
-    end_date: 2023-11-15
+    technical_mentor_id: 1
 )
 c2=Cohort.create(
     name: "SE-14",
-    start_date: 2023-06-23,
-    end_date: 2023-12-15
+    technical_mentor_id: 2
 )
 c3=Cohort.create(
     name: "SE-15",
-    start_date: 2023-07-23,
-    end_date: 2024-01-15
+    technical_mentor_id: 3
 )
 c4=Cohort.create(
     name: "SE-16",
-    start_date: 2023-10-23,
-    end_date: 2024-02-15
+    technical_mentor_id: 3
 )
 s1=Student.create(
     cohort_id: 1,

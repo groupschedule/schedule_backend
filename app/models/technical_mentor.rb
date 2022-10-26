@@ -1,4 +1,5 @@
 class TechnicalMentor < ApplicationRecord
     has_many :sessions
-    has_many :students, through: :cohort
+    has_many :cohorts
+    has_many :students, through: :cohorts 
 end
