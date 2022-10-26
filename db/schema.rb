@@ -21,8 +21,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_19_182042) do
 
   create_table "cohorts", force: :cascade do |t|
     t.string "name"
-    t.date "start_date"
-    t.date "end_date"
+    t.integer "technical_mentor_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
