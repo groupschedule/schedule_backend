@@ -5,6 +5,13 @@ class AnnouncementsController < ApplicationController
     end
 
 
+    # def create
+    #     comment=@current_tm.announcements.create!(announcement_params)
+    #     render json: announcement, status: :created
+    # end
+
+
+
 
 
 
