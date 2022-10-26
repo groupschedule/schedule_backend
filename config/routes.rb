@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :announcements
-  resources :comments only [:index, :create]
+  resources :announcements, only [:index]
+  resources :comments, only [:index, :create]
   resources :sessions
   resources :cohorts
   resources :students, only [:index, :create]
