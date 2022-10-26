@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :comments
   resources :sessions
   resources :cohorts
-  resources :students
+  resources :students, only [:index, :create]
   resources :technical_mentors
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
