@@ -1,11 +1,11 @@
 class CohortsController < ApplicationController
     def index
-        render json: Cohort.all, status: :ok
+        render json: Cohort.all, include: :students, status: :ok
     end
 
     def show
         cohort=Cohort.find_by(params[:id])
-        render json: cohort, status: :ok
+        render json: cohort, include: :students, status: :ok
     end
 
     def update

@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
     end
 
     def create
-        session=@current_tm.sessions.create!(session_params)
+        session=Session.create!(session_params)
         render json: session, status: :created
     end
 
@@ -28,7 +28,7 @@ class SessionsController < ApplicationController
     private
 
     def session_params
-        params.permit(:cohort_id, :technical_mentor_id, :date, :link)
+        params.permit(:session_name, :cohort_id, :technical_mentor_id, :date, :time, :link)
     end
 
 end
