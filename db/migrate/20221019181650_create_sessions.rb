@@ -5,7 +5,7 @@ class CreateSessions < ActiveRecord::Migration[7.0]
       t.integer :cohort_id
       t.integer :technical_mentor_id
       t.date :date
-      t.time :time
+      t.string :time
       t.string :link
       t.text :announcement
 
