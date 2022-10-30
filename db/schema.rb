@@ -32,7 +32,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_19_181843) do
     t.integer "cohort_id"
     t.integer "technical_mentor_id"
     t.date "date"
-    t.time "time"
+    t.string "time"
     t.string "link"
     t.text "announcement"
     t.datetime "created_at", null: false
@@ -45,6 +45,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_19_181843) do
     t.string "email"
     t.integer "phone"
     t.string "image"
+    t.string "password_digest"
     t.integer "module_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -54,6 +55,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_19_181843) do
     t.string "name"
     t.string "email"
     t.integer "phone"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
