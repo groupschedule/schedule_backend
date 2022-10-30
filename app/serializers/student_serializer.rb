@@ -1,3 +1,5 @@
 class StudentSerializer < ActiveModel::Serializer
-  attributes :cohort_id, :name, :email, :phone
+
+  attributes :id, :cohort_id, :name, :email, :phone, :image
+  belongs_to :cohort
 end
