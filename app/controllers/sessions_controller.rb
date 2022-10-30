@@ -28,7 +28,7 @@ class SessionsController < ApplicationController
     private
 
     def session_params
-        params.permit(:session_name, :cohort_id, :technical_mentor_id, :date, :time, :link)
+        params.permit(:session_name, :cohort_id, :technical_mentor_id, :date, :time, :link, :announcement)
     end
 
 end

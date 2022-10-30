@@ -71,7 +71,8 @@ ss1=Session.create(
     technical_mentor_id: 1,
     date: '2023-05-23',
     time: '12:00:00',
-    link: "https://meet.google.com/ksh-jmmw-ach?authuser=0&hs=122"
+    link: "https://meet.google.com/ksh-jmmw-ach?authuser=0&hs=122",
+    announcement: "psum dolor sit amet, consectetur adipiscing, sed eiusmod tempor Ipsum dolor sit amet,"
 )
 ss2=Session.create(
     session_name: 'Introduction to Authentication',
@@ -79,7 +80,8 @@ ss2=Session.create(
     technical_mentor_id: 2,
     date: '2023-07-24',
     time: '12:00:00',
-    link: "https://meet.google.com/bgx-ddmb-sfq?authuser=0&hs=122"
+    link: "https://meet.google.com/bgx-ddmb-sfq?authuser=0&hs=122",
+    announcement: "psum dolor sit amet, consectetur adipiscing, sed eiusmod tempor Ipsum dolor sit amet,"
 )
 ss3=Session.create(
     session_name: 'Introduction Serialization',
@@ -87,7 +89,8 @@ ss3=Session.create(
     technical_mentor_id: 2,
     date: '2023-07-25',
     time: '12:00:00',
-    link: "https://meet.google.com/dtz-qsrk-emb?authuser=0&hs=122"
+    link: "https://meet.google.com/dtz-qsrk-emb?authuser=0&hs=122",
+    announcement: "psum dolor sit amet, consectetur adipiscing, sed eiusmod tempor Ipsum dolor sit amet,"
 )
 cm1=Comment.create(
     student_id: 1,
@@ -103,20 +106,5 @@ cm3=Comment.create(
     student_id: 3,
     session_id: 2,
     description: "Nice Content"
-)
-a1=Announcement.create(
-    technical_mentor_id: 1,
-    session_id: 1,
-    description: "Standup begins soon"
-)
-a2=Announcement.create(
-    technical_mentor_id: 2,
-    session_id: 2,
-    description: "lectures begins soon"
-)
-a3=Announcement.create(
-    technical_mentor_id: 3,
-    session_id: 2,
-    description: "feedback session begins soon"
 )
 puts "done seeding"

@@ -7,6 +7,7 @@ class CreateSessions < ActiveRecord::Migration[7.0]
       t.date :date
       t.time :time
       t.string :link
+      t.text :announcement
 
       t.timestamps
     end
