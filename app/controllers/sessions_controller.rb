@@ -4,12 +4,12 @@ class SessionsController < ApplicationController
     end
 
     def show
-        session=Session.find_by!(id:params[:id])
+        session=Session.find_by(id:params[:id])
         render json: session, status: :ok
     end
 
     def update
-        session=Session.find_by!(id:params[:id])
+        session=Session.find_by(id:params[:id])
         session.update!(link: params[:link])
         render json: session, status: :accepted
     end
@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
     end
 
     def destroy
-        session=Session.find_by!(id: params[:id])
+        session=Session.find_by(id: params[:id])
         session.destroy
         render json: {}, status: :no_content
     end
