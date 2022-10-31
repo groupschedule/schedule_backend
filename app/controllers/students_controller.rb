@@ -3,14 +3,8 @@ class StudentsController < ApplicationController
     #skip_before_action :authorize_student, only: [:create]
 
  # data encoding
- def encode_token(email, password)
-    expiry = Time.now.to_i + 1800
-    data = {
-        "email": email,
-        "password": password,
-        "expiry": expiry
-    }
-    JWT.encode(data, "my_secr8t")
+ def encode_token(payload)
+    JWT.encode(payload, "my_secr8t")
 end
 
 #data decoding
@@ -68,7 +62,8 @@ end
 
 
 def index
-    render json: Student.all
+    student = Student.all
+    render json: student
 end
 
 def logout
@@ -81,7 +76,7 @@ end
 private 
 
 def student_params
-    params.permit(:email, :name, :password, :password_confirmation)
+    params.permit(:email, :name, :password)
 end
 end
 

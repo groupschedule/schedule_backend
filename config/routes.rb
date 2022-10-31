@@ -8,10 +8,14 @@ Rails.application.routes.draw do
   resources :students, only: [:index, :create]
   resources :technical_mentors, only: [:index, :create]
 
-  post '/login', to: 'technical_mentors#create'
-  post '/login', to: 'students#create'
-  post '/logout', to: 'technical_mentors#logout'
-  post '/logout', to: 'students#logout'
+  post '/technical_mentor/signup', to: "technical_mentors#create"
+  post '/student/signup', to: "students#create"
+  
+
+  post '/auth/login', to: 'technical_mentors#login'
+  post '/auth/login', to: 'students#login'
+  delete '/logout', to: 'technical_mentors#logout'
+  delete '/logout', to: 'students#logout'
 
  
 end
