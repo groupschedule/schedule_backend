@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :student_discussions
+  resources :discussions
   resources :announcements, only: [:index ] #:create]
   resources :comments, only: [:index, :create]
   resources :sessions, only: [:index, :create, :show, :update, :destroy]
