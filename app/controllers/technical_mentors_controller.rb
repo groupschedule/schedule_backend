@@ -1,16 +1,10 @@
 class TechnicalMentorsController < ApplicationController
-    #before_action :authorize_student
-    #skip_before_action :authorize_student, only: [:create]
+    #before_action :authorize_technical_mentor
+    #skip_before_action :authorize_technical_mentor, only: [:create]
 
  # data encoding
- def encode_token(email, password)
-    expiry = Time.now.to_i + 1800
-    data = {
-        "email": email,
-        "password": password,
-        "expiry": expiry
-    }
-    JWT.encode(data, "my_secr8t")
+ def encode_token(payload)
+   JWT.encode(payload, "my_secr8t")
 end
 
 #data decoding
@@ -80,6 +74,6 @@ end
 private 
 
 def technical_mentor_params
-    params.permit(:email, :name, :password, :password_confirmation)
+    params.permit(:email, :name, :phone, :password)
 end
 end

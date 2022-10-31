@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
     end
 
     def create
-        session=Session.create!(session_params)
+        session=Session.create(session_params)
         render json: session, status: :created
     end
 
