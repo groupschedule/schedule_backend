@@ -1,3 +1,3 @@
 class StudentDiscussionSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :discussion_id, :student_id, :comment
 end
