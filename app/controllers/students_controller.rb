@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
-    before_action :authorize_student
-    skip_before_action :authorize_student, only: [:create]
+    #before_action :authorize_student
+    #skip_before_action :authorize_student, only: [:create, :index]
 
  # data encoding
  def encode_token(payload)
@@ -82,12 +82,12 @@ end
 private 
 
 def student_params
-    params.permit(:email, :name, :password, :password_confirmation)
+    params.permit(:email, :name, :cohort_id, :password, :phone, :image, :password_confirmation)
 end
 end
 
 
-   
+
 
 
 

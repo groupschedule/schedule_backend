@@ -11,14 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2022_10_31_040708) do
-  create_table "announcements", force: :cascade do |t|
-    t.integer "technical_mentor_id"
-    t.integer "session_id"
-    t.string "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "cohorts", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -69,7 +61,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_31_040708) do
     t.integer "phone"
     t.string "image"
     t.string "password_digest"
-    t.integer "module_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

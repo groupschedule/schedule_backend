@@ -1,6 +1,6 @@
 class TechnicalMentorsController < ApplicationController
     #before_action :authorize_technical_mentor
-    #skip_before_action :authorize_technical_mentor, only: [:create]
+    #skip_before_action :authorize_technical_mentor, only: [:create, :index]
 
  # data encoding
  def encode_token(payload)

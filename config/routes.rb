@@ -12,8 +12,8 @@ Rails.application.routes.draw do
   post '/student/signup', to: "students#create"
   
 
-  post '/auth/login', to: 'technical_mentors#login'
-  post '/auth/login', to: 'students#login'
+  post '/technical_mentor/login', to: 'technical_mentors#login'
+  post '/student/login', to: 'students#login'
   delete '/logout', to: 'technical_mentors#logout'
   delete '/logout', to: 'students#logout'
 
