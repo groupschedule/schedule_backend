@@ -39,10 +39,10 @@ def authorize_technical_mentor
 end
 
 def create
-    technical_mentor = TechnicalMentor.create!(technical_mentor_params)
+    technical_mentor = TechnicalMentor.create(technical_mentor_params)
     if technical_mentor.valid?
         token = encode_token({ technical_mentor_id: technical_mentor.id})
-        render json: { technical_mentor: technical_mentor, token: token }, status: :ok
+        render json: { technical_mentor: technical_mentor, token: token }, status: :created
     else
         render json: { error: 'Invalid email or password' }, status: :unprocessable_entity
     end
@@ -53,7 +53,7 @@ def login
     #TechnicalMentor#authenticate comes from BCrypt
     if technical_mentor && technical_mentor.authenticate(params[:password])
         token = encode_token({ technical_mentor_id: technical_mentor.id })
-        render json: { technical_mentor: technical_mentor, token: token}, status: :ok
+        render json: { technical_mentor: technical_mentor, token: token}, status: :accepted
     else
         render json: { error: 'Invalid email or password' }, status: :unprocessable_entity
     end
@@ -74,6 +74,6 @@ end
 private 
 
 def technical_mentor_params
-    params.permit(:email, :name, :phone, :password)
+    params.permit(:email, :name, :phone, :password, :password_confirmation)
 end
 end

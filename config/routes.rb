@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   resources :sessions, only: [:index, :create, :show, :update, :destroy]
   resources :cohorts, only: [:index, :create, :show, :update, :destroy]
   resources :students, only: [:index, :create, :show]
-  resources :technical_mentors, only: [:index, :create]
-
+  resources :technical_mentors, only: [:index]
+  
   post '/technical_mentor/signup', to: "technical_mentors#create"
   post '/student/signup', to: "students#create"
   

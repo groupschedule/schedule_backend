@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
-    #before_action :authorize_student
-    #skip_before_action :authorize_student, only: [:create]
+    before_action :authorize_student
+    skip_before_action :authorize_student, only: [:create]
 
  # data encoding
  def encode_token(payload)
@@ -39,14 +39,15 @@ def authorize_student
 end
 
 def create
-    student = Student.create!(student_params)
+    student = Student.create(student_params)
     if student.valid?
         token = encode_token({ student_id: student.id})
-        render json: { student: student, token: token }, status: :ok
+        render json: { student: student, token: token }, status: :created
     else
         render json: { error: 'Invalid email or password' }, status: :unprocessable_entity
     end
 end
+
 
 def login 
     student = Student.find_by(email: params[:email])
@@ -54,7 +55,7 @@ def login
     if student && student.authenticate(params[:password])
         #encode token is from ApplicationController
         token = encode_token({ student_id: student.id })
-        render json: { student: student, token: token}, status: :ok
+        render json: { student: student, token: token}, status: :accepted
     else
         render json: { error: 'Invalid email or password' }, status: :unprocessable_entity
     end
@@ -62,8 +63,8 @@ end
 
 
 def index
-    student = Student.all
-    render json: student
+    students = Student.all
+    render json: students
 end
 
 def show
@@ -81,7 +82,7 @@ end
 private 
 
 def student_params
-    params.permit(:email, :name, :password)
+    params.permit(:email, :name, :password, :password_confirmation)
 end
 end
 
