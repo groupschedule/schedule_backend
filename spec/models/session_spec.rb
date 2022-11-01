@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Session, type: :model do
-  let!(:session) { Session.new(cohort_id: 1, technical_mentor_id: 1, date: 2023-05-23, link: "https://meet.google.com/ksh-jmmw-ach?authuser=0&hs=122") }
-
+  let!(:session) { Session.new(cohort_id: 1, technical_mentor_id: 1, date: 2023 - 0o5 - 23, link: 'https://meet.google.com/ksh-jmmw-ach?authuser=0&hs=122') }
 
   describe '#cohort_id' do
     it 'returns the session\'s cohort_id' do

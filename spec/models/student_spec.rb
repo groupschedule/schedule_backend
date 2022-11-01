@@ -1,8 +1,11 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Student, type: :model do
-  let!(:student) { Student.new(cohort_id: 1, name: "David Mwenje", email: "davidmwenje@gmail.com", phone: 254701222333) }
-
+  let!(:student) do
+    Student.new(cohort_id: 1, name: 'David Mwenje', email: 'davidmwenje@gmail.com', phone: 254_701_222_333)
+  end
 
   describe '#cohort_id' do
     it 'returns the student\'s cohort id' do
@@ -24,7 +27,7 @@ RSpec.describe Student, type: :model do
 
   describe '#phone' do
     it 'returns the student\'s phone' do
-      expect(student.phone).to eq(254701222333)
+      expect(student.phone).to eq(254_701_222_333)
     end
   end
 end
