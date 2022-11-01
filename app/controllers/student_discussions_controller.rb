@@ -9,7 +9,7 @@ class StudentDiscussionsController < ApplicationController
     end
 
     def create
-        discussion=StudentDiscussion.create!(st_discussion_params)
+        discussion=StudentDiscussion.create(st_discussion_params)
         render json: discussion, status: :created
     end
 
