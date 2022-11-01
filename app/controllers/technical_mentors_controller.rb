@@ -83,6 +83,6 @@ def create
 
 
 def technical_mentor_params
-    params.permit(:email, :name, :phone, :password, :password_confirmation
+    params.permit(:email, :name, :phone, :password, :password_confirmation)
 end
 end
