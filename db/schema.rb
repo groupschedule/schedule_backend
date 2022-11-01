@@ -11,10 +11,18 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2022_10_31_040708) do
+  create_table "announcements", force: :cascade do |t|
+    t.integer "technical_mentor_id"
+    t.integer "session_id"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "cohorts", force: :cascade do |t|
     t.string "name"
-    t.text "description"
-    t.integer "technical_mentor_id"
+    t.date "start_date"
+    t.date "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -35,13 +43,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_31_040708) do
   end
 
   create_table "sessions", force: :cascade do |t|
-    t.string "session_name"
     t.integer "cohort_id"
     t.integer "technical_mentor_id"
     t.date "date"
-    t.string "time"
     t.string "link"
-    t.text "announcement"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -56,12 +61,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_31_040708) do
 
   create_table "students", force: :cascade do |t|
     t.integer "cohort_id"
-    t.string "name"
+    t.stringhttp://127.0.0.1:3000/students "name"
     t.string "email"
     t.integer "phone"
-    t.string "image"
-    t.string "password_digest"
-    t.integer "module_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -70,7 +72,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_31_040708) do
     t.string "name"
     t.string "email"
     t.integer "phone"
-    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
