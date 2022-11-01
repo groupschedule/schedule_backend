@@ -1,5 +1,5 @@
 class TechnicalMentorsController < ApplicationController
-    #before_action :authorize_technical_mentor
+    #before_action :authorized
     #skip_before_action :authorize_technical_mentor, only: [:create, :index]
 
  # data encoding

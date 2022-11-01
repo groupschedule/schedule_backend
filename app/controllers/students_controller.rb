@@ -1,5 +1,5 @@
 class StudentsController < ApplicationController
-    #before_action :authorize_student
+    #before_action :authorized
     #skip_before_action :authorize_student, only: [:create, :index]
 
  # data encoding
