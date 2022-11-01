@@ -1,8 +1,11 @@
 # frozen_string_literal: true
 
 class StudentsController < ApplicationController
-  # before_action :authorize_student
-  # skip_before_action :authorize_student, only: [:create]
+
+    #before_action :authorized
+    #skip_before_action :authorize_student, only: [:create, :index]
+
+
 
   # data encoding
   def encode_token(payload)
@@ -39,32 +42,40 @@ class StudentsController < ApplicationController
     render json: { message: 'Student only.' }, status: :unauthorized unless student_logged_in?
   end
 
-  def create
+
+def create
     student = Student.create(student_params)
     if student.valid?
-      token = encode_token({ student_id: student.id })
-      render json: { student: student, token: token }, status: :ok
+        token = encode_token({ student_id: student.id})
+        render json: { student: student, token: token }, status: :created
+
+  
     else
       render json: { error: 'Invalid email or password' }, status: :unprocessable_entity
     end
   end
 
-  def login
+
+
+def login 
     student = Student.find_by(email: params[:email])
-    # Student#authenticate comes from BCrypt
-    if student&.authenticate(params[:password])
-      # encode token is from ApplicationController
-      token = encode_token({ student_id: student.id })
-      render json: { student: student, token: token }, status: :ok
+    #Student#authenticate comes from BCrypt
+    if student && student.authenticate(params[:password])
+        #encode token is from ApplicationController
+        token = encode_token({ student_id: student.id })
+        render json: { student: student, token: token}, status: :accepted
+
     else
       render json: { error: 'Invalid email or password' }, status: :unprocessable_entity
     end
   end
 
-  def index
-    student = Student.all
-    render json: student
-  end
+
+def index
+    students = Student.all
+    render json: students
+end
+
 
   def show
     student = Student.find_by(params[:id])
@@ -80,7 +91,15 @@ class StudentsController < ApplicationController
 
   private
 
-  def student_params
-    params.permit(:email, :name, :password)
-  end
+
+def student_params
+    params.permit(:email, :name, :cohort_id, :password, :phone, :image, :password_confirmation)
 end
+end
+
+
+
+
+
+
+  

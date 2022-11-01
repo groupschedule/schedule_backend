@@ -58,15 +58,17 @@ ActiveRecord::Schema[7.0].define(version: 20_221_031_040_708) do
     t.datetime 'updated_at', null: false
   end
 
-  create_table 'students', force: :cascade do |t|
-    t.integer 'cohort_id'
-    t.string 'name'
-    t.string 'email'
-    t.integer 'phone'
-    t.string 'image'
-    t.string 'password_digest'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+
+  create_table "students", force: :cascade do |t|
+    t.integer "cohort_id"
+    t.string "name"
+    t.string "email"
+    t.integer "phone"
+    t.string "image"
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+
   end
 
   create_table 'technical_mentors', force: :cascade do |t|

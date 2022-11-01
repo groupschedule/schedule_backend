@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
 class TechnicalMentorsController < ApplicationController
-  # before_action :authorize_technical_mentor
-  # skip_before_action :authorize_technical_mentor, only: [:create]
+
+    #before_action :authorized
+    #skip_before_action :authorize_technical_mentor, only: [:create, :index]
+
 
   # data encoding
   def encode_token(payload)
@@ -39,11 +41,14 @@ class TechnicalMentorsController < ApplicationController
     render json: { message: 'Technical Mentor only.' }, status: :unauthorized unless technical_mentor_logged_in?
   end
 
-  def create
-    technical_mentor = TechnicalMentor.create!(technical_mentor_params)
+
+def create
+    technical_mentor = TechnicalMentor.create(technical_mentor_params)
     if technical_mentor.valid?
-      token = encode_token({ technical_mentor_id: technical_mentor.id })
-      render json: { technical_mentor: technical_mentor, token: token }, status: :ok
+        token = encode_token({ technical_mentor_id: technical_mentor.id})
+        render json: { technical_mentor: technical_mentor, token: token }, status: :created
+
+  
     else
       render json: { error: 'Invalid email or password' }, status: :unprocessable_entity
     end
@@ -51,10 +56,13 @@ class TechnicalMentorsController < ApplicationController
 
   def login
     technical_mentor = TechnicalMentor.find_by(email: params[:email])
-    # TechnicalMentor#authenticate comes from BCrypt
-    if technical_mentor&.authenticate(params[:password])
-      token = encode_token({ technical_mentor_id: technical_mentor.id })
-      render json: { technical_mentor: technical_mentor, token: token }, status: :ok
+
+    #TechnicalMentor#authenticate comes from BCrypt
+    if technical_mentor && technical_mentor.authenticate(params[:password])
+        token = encode_token({ technical_mentor_id: technical_mentor.id })
+        render json: { technical_mentor: technical_mentor, token: token}, status: :accepted
+
+  
     else
       render json: { error: 'Invalid email or password' }, status: :unprocessable_entity
     end
@@ -73,7 +81,8 @@ class TechnicalMentorsController < ApplicationController
 
   private
 
-  def technical_mentor_params
-    params.permit(:email, :name, :phone, :password)
-  end
+
+def technical_mentor_params
+    params.permit(:email, :name, :phone, :password, :password_confirmation
+end
 end
