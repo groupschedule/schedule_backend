@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
-  let!(:comment) { Comment.new(student_id: 1, session_id: 1, description: "I loved the session") }
-
+  let!(:comment) { Comment.new(student_id: 1, session_id: 1, description: 'I loved the session') }
 
   describe '#student_id' do
     it 'returns the comment\'s student id' do
