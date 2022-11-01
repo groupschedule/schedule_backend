@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_19_181843) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_31_040708) do
   create_table "cohorts", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -27,6 +27,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_19_181843) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "discussions", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "sessions", force: :cascade do |t|
     t.string "session_name"
     t.integer "cohort_id"
@@ -35,6 +42,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_19_181843) do
     t.string "time"
     t.string "link"
     t.text "announcement"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "student_discussions", force: :cascade do |t|
+    t.integer "discussion_id"
+    t.integer "student_id"
+    t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
