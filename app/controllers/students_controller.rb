@@ -66,6 +66,11 @@ def index
     render json: student
 end
 
+def show
+    student=Student.find_by(params[:id])
+    render json: student, status: :ok
+end
+
 def logout
     session.delete(:email)
     render json: {

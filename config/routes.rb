@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :comments, only: [:index, :create]
   resources :sessions, only: [:index, :create, :show, :update, :destroy]
   resources :cohorts, only: [:index, :create, :show, :update, :destroy]
-  resources :students, only: [:index, :create]
+  resources :students, only: [:index, :create, :show]
   resources :technical_mentors, only: [:index, :create]
 
   post '/technical_mentor/signup', to: "technical_mentors#create"
