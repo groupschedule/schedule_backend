@@ -36,8 +36,7 @@ s1=Student.create(
     phone: 254701222333,
     image: "https://i2-prod.walesonline.co.uk/news/uk-news/article23927263.ece/ALTERNATES/s1200c/0_F038F02A-D11F-11EC-A042-0A2111BCB09D.jpg",
     password: 'here1',
-    password_confirmation: 'here1',
-   
+    password_confirmation: 'here1'
 )
 s2=Student.create(
     cohort_id: 2,
@@ -46,7 +45,7 @@ s2=Student.create(
     phone: 254742568427,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzHQv_th9wq3ivQ1CVk7UZRxhbPq64oQrg5Q&usqp=CAU",
     password: 'there2',
-    password_confirmation: 'there2',
+    password_confirmation: 'there2'
   
 )
 s3=Student.create(
@@ -56,29 +55,29 @@ s3=Student.create(
     phone: 254712111555,
     image: "https://i.etsystatic.com/36532523/r/il/97ae46/4078306713/il_340x270.4078306713_n74s.jpg",
     password: 'when3',
-    password_confirmation: 'when3',
+    password_confirmation: 'when3'
    
 )
 tm1=TechnicalMentor.create(
     name: "Ian Okumu",
     email: "ianokumu@gmail.com",
-    phone: 254722567890,
+    phone: 25479000000,
     password: 'busy23',
-    password_confirmation: 'busy23',
+    password_confirmation: 'busy23'
 )
 tm2=TechnicalMentor.create(
     name: "Victor Kuria",
     email: "victorkuria@gmail.com",
     phone: 254711567333,
     password: 'away4',
-    password_confirmation: 'away4',
+    password_confirmation: 'away4'
 )
 tm3=TechnicalMentor.create(
     name: "Christine Karimi",
     email: "christineKarimi@gmail.com",
     phone: 254745454545,
     password: 'Kweli1',
-    password_confirmation: 'Kweli1',
+    password_confirmation: 'Kweli1'
 )
 ss1=Session.create(
     session_name: 'Introduction to Active Record',

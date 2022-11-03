@@ -1,16 +1,14 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :announcements
+  
   resources :student_discussions
   resources :discussions
-
-  resources :announcements, only: [:index ] #:create]
-  resources :comments, only: [:index, :create]
-  resources :sessions, only: [:index, :create, :show, :update, :destroy]
-  resources :cohorts, only: [:index, :create, :show, :update, :destroy]
-  resources :students, only: [:index, :create, :show]
-  resources :technical_mentors, only: [:index]
+  resources :comments 
+  resources :sessions
+  resources :cohorts
+  resources :students
+  resources :technical_mentors
   
   post '/technical_mentor/signup', to: "technical_mentors#create"
   post '/student/signup', to: "students#create"

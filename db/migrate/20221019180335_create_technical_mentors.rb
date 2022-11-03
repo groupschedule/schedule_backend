@@ -5,7 +5,7 @@ class CreateTechnicalMentors < ActiveRecord::Migration[7.0]
     create_table :technical_mentors do |t|
       t.string :name
       t.string :email
-      t.integer :phone
+      t.bigint :phone
       t.string :password_digest
 
       t.timestamps
