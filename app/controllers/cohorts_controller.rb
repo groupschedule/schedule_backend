@@ -12,7 +12,7 @@ class CohortsController < ApplicationController
 
   def update
     cohort = Cohort.find_by(id: params[:id])
-    cohort.update(name: params[:name])
+    cohort.update(name: params[:name], description: params[:description])
     render json: cohort, status: :accepted
   end
 
@@ -30,6 +30,6 @@ class CohortsController < ApplicationController
   private
 
   def cohort_params
-    params.permit(:name, :technical_mentor_id)
+    params.permit(:name, :technical_mentor_id, :description)
   end
 end
