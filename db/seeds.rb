@@ -10,23 +10,23 @@
 
 puts "seeding"
 c1=Cohort.create(
-    name: "SE-13",
-    description: "Lorem Ipsum dolor sit amet, consectetur adipiscing, sed eiusmod tempor Ipsum dolor sit amet, consectetur adipiscing, sed eiusmod ipsum dolor sit amet, consectetur adipiscing, sed eiusmod tempor incidunt",
+    name: "Introduction to JavaScript",
+    description: "This is module covers a basic introduction to basic web languages of HTML, CSS3 and JavaScript language",
     technical_mentor_id: 1
 )
 c2=Cohort.create(
-    name: "SE-14",
-    description: "Lorem Ipsum dolor sit amet, consectetur adipiscing, sed eiusmod tempor Ipsum dolor sit amet, consectetur adipiscing, sed eiusmod ipsum dolor sit amet, consectetur adipiscing, sed eiusmod tempor incidunt",
+    name: "React JS",
+    description: "React is a JavaScript library that makes it painless to create interactive User Interfaces(UIs)",
     technical_mentor_id: 2
 )
 c3=Cohort.create(
-    name: "SE-15",
-    description: "Lorem Ipsum dolor sit amet, consectetur adipiscing, sed eiusmod tempor Ipsum dolor sit amet, consectetur adipiscing, sed eiusmod ipsum dolor sit amet, consectetur adipiscing, sed eiusmod tempor incidunt",
+    name: "Ruby Programming Language",
+    description: "Ruby is a open-source programming language that focuses on the simplicity and productivity of programming",
     technical_mentor_id: 3
 )
 c4=Cohort.create(
-    name: "SE-16",
-    description: "Lorem Ipsum dolor sit amet, consectetur adipiscing, sed eiusmod tempor Ipsum dolor sit amet, consectetur adipiscing, sed eiusmod ipsum dolor sit amet, consectetur adipiscing, sed eiusmod tempor incidunt",
+    name: "Ruby on Rails",
+    description: "Ruby on Rails is a fully-featured IDE for productive web-development",
     technical_mentor_id: 3
 )
 s1=Student.create(
@@ -87,7 +87,7 @@ ss1=Session.create(
     date: '2023-05-23',
     time: '12:00:00',
     link: "https://meet.google.com/ksh-jmmw-ach?authuser=0&hs=122",
-    announcement: "psum dolor sit amet, consectetur adipiscing, sed eiusmod tempor Ipsum dolor sit amet,"
+    announcement: "The session is scheduled for 12 noon. Please keep time,"
 )
 ss2=Session.create(
     session_name: 'Introduction to Authentication',
@@ -96,7 +96,7 @@ ss2=Session.create(
     date: '2023-07-24',
     time: '12:00:00',
     link: "https://meet.google.com/bgx-ddmb-sfq?authuser=0&hs=122",
-    announcement: "psum dolor sit amet, consectetur adipiscing, sed eiusmod tempor Ipsum dolor sit amet,"
+    announcement: "This lecture's content will be a prerequisite to end of week of week lab,"
 )
 ss3=Session.create(
     session_name: 'Introduction Serialization',
@@ -105,7 +105,7 @@ ss3=Session.create(
     date: '2023-07-25',
     time: '12:00:00',
     link: "https://meet.google.com/dtz-qsrk-emb?authuser=0&hs=122",
-    announcement: "psum dolor sit amet, consectetur adipiscing, sed eiusmod tempor Ipsum dolor sit amet,"
+    announcement: "We will be delving into the deeper understanding of serialization,"
 )
 cm1=Comment.create(
     student_id: 1,
@@ -122,147 +122,32 @@ cm3=Comment.create(
     session_id: 2,
     description: "Nice Content"
 )
-puts "done seeding"
-=======
-puts 'seeding'
-c1 = Cohort.create(
-  name: 'SE-13',
-  description: 'Lorem Ipsum dolor sit amet, consectetur adipiscing, sed eiusmod tempor Ipsum dolor sit amet, consectetur adipiscing, sed eiusmod ipsum dolor sit amet, consectetur adipiscing, sed eiusmod tempor incidunt',
-  technical_mentor_id: 1,
-  start_date: '22-3-2022',
-  end_date: '22-4-2022'
-)
-c2 = Cohort.create(
-  name: 'SE-14',
-  description: 'Lorem Ipsum dolor sit amet, consectetur adipiscing, sed eiusmod tempor Ipsum dolor sit amet, consectetur adipiscing, sed eiusmod ipsum dolor sit amet, consectetur adipiscing, sed eiusmod tempor incidunt',
-  technical_mentor_id: 2,
-  start_date: '22-3-2022',
-  end_date: '22-4-2022'
-)
-c3 = Cohort.create(
-  name: 'SE-15',
-  description: 'Lorem Ipsum dolor sit amet, consectetur adipiscing, sed eiusmod tempor Ipsum dolor sit amet, consectetur adipiscing, sed eiusmod ipsum dolor sit amet, consectetur adipiscing, sed eiusmod tempor incidunt',
-  technical_mentor_id: 3,
-  start_date: '22-3-2022',
-  end_date: '22-4-2022'
-)
-c4 = Cohort.create(
-  name: 'SE-16',
-  description: 'Lorem Ipsum dolor sit amet, consectetur adipiscing, sed eiusmod tempor Ipsum dolor sit amet, consectetur adipiscing, sed eiusmod ipsum dolor sit amet, consectetur adipiscing, sed eiusmod tempor incidunt',
-  technical_mentor_id: 3,
-  start_date: '22-3-2022',
-  end_date: '22-4-2022'
-)
-s1 = Student.create(
-  cohort_id: 1,
-  name: 'David Mwenje',
-  email: 'davidmwenje@gmail.com',
-  phone: 254_701_222_333,
-  image: 'https://i2-prod.walesonline.co.uk/news/uk-news/article23927263.ece/ALTERNATES/s1200c/0_F038F02A-D11F-11EC-A042-0A2111BCB09D.jpg',
-  password_digest: BCrypt::Password.create('Your_Password')
-)
-s2 = Student.create(
-  cohort_id: 2,
-  name: 'Glenn Mwangi',
-  email: 'glennmwangi@gmail.com',
-  phone: 254_742_568_427,
-  image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzHQv_th9wq3ivQ1CVk7UZRxhbPq64oQrg5Q&usqp=CAU',
-  password_digest: BCrypt::Password.create('Your_Password')
-)
-s3 = Student.create(
-  cohort_id: 2,
-  name: 'Margaret Njoki',
-  email: 'margaretnjoki@gmail.com',
-  phone: 254_712_111_555,
-  image: 'https://i.etsystatic.com/36532523/r/il/97ae46/4078306713/il_340x270.4078306713_n74s.jpg',
-  password_digest: BCrypt::Password.create('Your_Password')
-)
-tm1 = TechnicalMentor.create(
-  name: 'Ian Okumu',
-  email: 'ianokumu@gmail.com',
-  phone: 254_722_567_890,
-  password_digest: BCrypt::Password.create('Your_Password')
-)
-tm2 = TechnicalMentor.create(
-  name: 'Victor Kuria',
-  email: 'victorkuria@gmail.com',
-  phone: 254_711_567_333,
-  password_digest: BCrypt::Password.create('Your_Password')
-)
-tm3 = TechnicalMentor.create(
-  name: 'Christine Karimi',
-  email: 'christineKarimi@gmail.com',
-  phone: 254_745_454_545,
-  password_digest: BCrypt::Password.create('Your_Password')
-)
-ss1 = Session.create(
-  session_name: 'Introduction to Active Record',
-  cohort_id: 1,
-  technical_mentor_id: 1,
-  date: '22-3-2022',
-  time: '12:00:00',
-  link: 'https://meet.google.com/ksh-jmmw-ach?authuser=0&hs=122',
-  announcement: 'psum dolor sit amet, consectetur adipiscing, sed eiusmod tempor Ipsum dolor sit amet,'
-)
-ss2 = Session.create(
-  session_name: 'Introduction to Authentication',
-  cohort_id: 2,
-  technical_mentor_id: 2,
-  date: '22-3-2022',
-  time: '12:00:00',
-  link: 'https://meet.google.com/bgx-ddmb-sfq?authuser=0&hs=122',
-  announcement: 'psum dolor sit amet, consectetur adipiscing, sed eiusmod tempor Ipsum dolor sit amet,'
-)
-ss3 = Session.create(
-  session_name: 'Introduction Serialization',
-  cohort_id: 2,
-  technical_mentor_id: 2,
-  date: '22-3-2022',
-  time: '12:00:00',
-  link: 'https://meet.google.com/dtz-qsrk-emb?authuser=0&hs=122',
-  announcement: 'psum dolor sit amet, consectetur adipiscing, sed eiusmod tempor Ipsum dolor sit amet,'
-)
-cm1 = Comment.create(
-  student_id: 1,
-  session_id: 1,
-  description: 'Excellent content'
-)
-cm2 = Comment.create(
-  student_id: 2,
-  session_id: 2,
-  description: 'Good Content'
-)
-cm3 = Comment.create(
-  student_id: 3,
-  session_id: 2,
-  description: 'Nice Content'
-)
 d1 = Discussion.create(
-  title: 'Lorem Ipsum1',
-  description: 'Lorem ipsum lorem ipsum1'
+  title: 'usEffect',
+  description: 'I would be happy to hear your thoughts on what usEffect does and how it is incorporated in React components'
 )
 d2 = Discussion.create(
-  title: 'Lorem Ipsum2',
-  description: 'Lorem ipsum lorem ipsum2'
+  title: 'Ruby Serialization',
+  description: 'I tried perusing through the Canvas content about serialization but I did not get to understand a lot of the concepts. Any thoughts on how to go about will be highly appreciated'
 )
 d3 = Discussion.create(
-  title: 'Lorem Ipsum3',
-  description: 'Lorem ipsum lorem ipsum3'
+  title: 'Model-View-Controllers(MVC)',
+  description: 'Kindly drop in your comments on your understanding of MVC'
 )
 sd1 = StudentDiscussion.create(
   discussion_id: 1,
   student_id: 1,
-  comment: 'well done well done'
+  comment: 'That was eye-opening for me'
 )
 sd2 = StudentDiscussion.create(
   discussion_id: 2,
   student_id: 2,
-  comment: 'well done well done'
+  comment: 'Sincerely ata mimi sipati kitu'
 )
 sd3 = StudentDiscussion.create(
   discussion_id: 3,
   student_id: 3,
-  comment: 'well done well done'
+  comment: 'We can have an extended sit-in discussion about this'
 )
 puts 'done seeding'
 
