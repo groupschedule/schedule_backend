@@ -63,7 +63,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_31_040708) do
     t.integer "cohort_id"
     t.string "name"
     t.string "email"
-    t.integer "phone"
+    t.bigint "phone"
     t.string "image"
     t.string "password_digest"
     t.datetime "created_at", null: false
